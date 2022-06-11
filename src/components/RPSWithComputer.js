@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Button from './Button'
-import rpsHOC, { options, playElements, rpsPropTypes } from './RPSHOC'
+import playRPS, { options, playElements, rpsPropTypes } from './PlayRPS'
 import { Container, Row, Col } from 'react-bootstrap';
 import Select from "react-select";
 
@@ -24,7 +24,7 @@ const RPSWithComputer = (props) => {
         computerChoice,
         roundResult,
         userChoice,
-        resetResult,
+        restartGame,
         userPoints,
         computerPoints,
         setDropdownValue,
@@ -47,7 +47,7 @@ const RPSWithComputer = (props) => {
                         </Row>
                     </Col>
                     <Col>
-                        <Button text={'Reset'} color={'#B5C4CB'} commonProps={{ ...styles.common, fontSize: 20, float: 'right' }} onClick={resetResult}></Button>
+                        <Button text={'Restart'} color={'#B5C4CB'} commonProps={{ ...styles.common, fontSize: 20, float: 'right' }} onClick={restartGame}></Button>
                     </Col>
                 </Row>
             </Container>
@@ -141,4 +141,4 @@ const styles = {
 }
 
 RPSWithComputer.propTypes = rpsPropTypes
-export default rpsHOC(RPSWithComputer);
+export default playRPS(RPSWithComputer);

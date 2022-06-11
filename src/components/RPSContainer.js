@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Button from './Button'
-import rps from '../assets/rps.gif'
+// import rps from '../assets/rps.gif'
 
 const RPSContainer = () => {
     return (
@@ -16,11 +16,11 @@ const RPSContainer = () => {
                     <Button color={'#41C0B4'} commonProps={common} text={'Comp vs Comp'}></Button>
                 </Link></Col>
             </Row>
-            <Row style={{textAlign:'center'}}>
+            {/* <Row style={{textAlign:'center'}}>
                 <Col>
                     <img src={rps} alt='rps' />
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     )
 }

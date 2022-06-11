@@ -6,12 +6,12 @@ export const rpsPropTypes = {
     setSelection: PropTypes.func,
     computerChoice: PropTypes.string,
     userChoice: PropTypes.string,
-    resetResult: PropTypes.func,
+    restartGame: PropTypes.func,
     userPoints: PropTypes.number,
     computerPoints: PropTypes.number,
     setDropdownValue: PropTypes.func,
     winner: PropTypes.string,
-    rounds: PropTypes.string,
+    rounds: PropTypes.object,
     roundResult: PropTypes.string,
     simulatePlay:PropTypes.func
 }
@@ -27,8 +27,8 @@ export const playElements = [
     { name: 'Paper', value: 'p', color: '#FFBD33' },
     { name: 'Scissor', value: 's', color: '#33A7FF' }]
 
-const rpsHOC = (WrappedComponent) => {
-    class RPSHOC extends Component {
+const playRPS = (WrappedComponent) => {
+    class PlayRPS extends Component {
         constructor(props) {
             super(props)
             this.state = {
@@ -46,10 +46,10 @@ const rpsHOC = (WrappedComponent) => {
             return playElements[Math.floor(Math.random() * playElements.length)].value;
         }
         setDropdownValue = (v) => {
-            this.resetResult()
+            this.restartGame()
             this.setState({ rounds: v })
         }
-        resetResult = () => {
+        restartGame = () => {
             this.setState({
                 rounds: null,
                 userPoints: 0,
@@ -107,7 +107,7 @@ const rpsHOC = (WrappedComponent) => {
                 computerChoice={computerChoice}
                 userChoice={userChoice}
                 roundResult={roundResult}
-                resetResult={this.resetResult}
+                restartGame={this.restartGame}
                 computerPoints={computerPoints}
                 userPoints={userPoints}
                 simulatePlay={this.simulatePlay}
@@ -118,10 +118,10 @@ const rpsHOC = (WrappedComponent) => {
             />
         }
     }
-    RPSHOC.propTypes = WrappedComponent.propTypes
-    return RPSHOC
+    PlayRPS.propTypes = WrappedComponent.propTypes
+    return PlayRPS
 }
 
 
 
-export default rpsHOC
+export default playRPS

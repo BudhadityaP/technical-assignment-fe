@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Button from './Button'
-import rpsHOC, { options, rpsPropTypes } from './RPSHOC'
+import playRPS, { options, rpsPropTypes } from './PlayRPS'
 import Select from "react-select";
 import { Container, Row, Col } from 'react-bootstrap';
 import Confetti from 'react-confetti'
@@ -15,7 +15,7 @@ const RPSCompWithComp = (props) => {
         computerChoice,
         roundResult,
         userChoice,
-        resetResult,
+        restartGame,
         userPoints,
         computerPoints,
         simulatePlay,
@@ -40,7 +40,7 @@ const RPSCompWithComp = (props) => {
                     
                     <Col>
                         <Button commonProps={{...styles.common}} color={'#74C3F6'} isDisabled={winner!==null} text={'Play'} onClick={() => simulatePlay()}></Button>
-                        <Button text={'Reset'} color={'#B5C4CB'} commonProps={{ ...styles.common, fontSize: 20, float: 'right' }} onClick={resetResult}></Button>
+                        <Button text={'Restart'} color={'#B5C4CB'} commonProps={{ ...styles.common, fontSize: 20, float: 'right' }} onClick={restartGame}></Button>
                     </Col>
                 </Row>
             </Container>
@@ -123,4 +123,4 @@ const styles = {
 }
 
 RPSCompWithComp.propTypes = rpsPropTypes
-export default rpsHOC(RPSCompWithComp);
+export default playRPS(RPSCompWithComp);
