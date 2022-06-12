@@ -53,6 +53,19 @@ Object {
             </a>
           </div>
         </div>
+        <div
+          class="row"
+          style="text-align: center;"
+        >
+          <div
+            class="col"
+          >
+            <img
+              alt="rps"
+              src="[object Object]"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -103,6 +116,19 @@ Object {
               Comp vs Comp
             </button>
           </a>
+        </div>
+      </div>
+      <div
+        class="row"
+        style="text-align: center;"
+      >
+        <div
+          class="col"
+        >
+          <img
+            alt="rps"
+            src="[object Object]"
+          />
         </div>
       </div>
     </div>

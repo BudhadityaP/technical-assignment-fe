@@ -1,11 +1,14 @@
 import React from 'react';
-import { render, screen, configure } from '@testing-library/react';
+import { render, screen, configure, waitFor } from '@testing-library/react';
 import RPSContainer from './RPSContainer';
 import { BrowserRouter } from "react-router-dom";
 import userEvent from '@testing-library/user-event'
+import { createMemoryHistory } from 'history';
 
+let history;
 const testRender = (component) => {
-    return (render(<BrowserRouter>{component}</BrowserRouter>))
+    history = createMemoryHistory();
+    return (render(<BrowserRouter >{component}</BrowserRouter>))
 }
 let container;
 describe('----- RPSContainer tests -----', () => {
@@ -31,12 +34,21 @@ describe('----- RPSContainer tests -----', () => {
         expect(button2).toBeDefined();
     })
 
-    xit('renders correctly - Users clicks Human vs Computer button', async () => {
+    it('renders correctly - Users clicks Human vs Computer button', async () => {
         const user = userEvent.setup()
         const button1 = screen.getByRole('button', { name: /human vs computer/i })
-        expect(button1).toBeDefined();
-       await user.click(button1)
-        // const headingPWC = screen.getByRole('heading', { name: /play with computer/i })
-        // expect(headingPWC).toBeInTheDocument();
+        user.click(button1)
+        await waitFor(() => {
+            expect(window.location.pathname).toEqual('/RPSWithComputer');
+        });
+    })
+
+    it('renders correctly - Users clicks Computer vs Computer button', async () => {
+        const user = userEvent.setup()
+        const button2 = screen.getByRole('button', { name: /comp vs comp/i })
+        user.click(button2)
+        await waitFor(() => {
+            expect(window.location.pathname).toEqual('/RPSCompWithComp');
+        });
     })
 })
