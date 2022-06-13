@@ -77,6 +77,7 @@ describe('----- RPSWithComputer tests -----', () => {
 
     //     //expect(screen.getByRole('option', { name: 'Rock' }).selected).toBe(true)
     // })
+    
     it('user wins the round', () => {
         props = {...props, roundResult:'1'}
         render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)
@@ -91,12 +92,20 @@ describe('----- RPSWithComputer tests -----', () => {
         expect(screen.getByRole('img', { name: /user normal/i })).toBeDefined()
     })
 
+    it('draw game', () => {
+        props = {...props, userChoice:'r', computerChoice:'r', roundResult:'Draw'}
+        render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)
+        expect(screen.getByRole('img', { name: /user normal/i })).toBeDefined()
+        expect(screen.getByRole('img', { name: /comp/i })).toBeDefined()
+    })
+
     it('user wins the game', () => {
         props = {...props, winner:'p1',roundResult:'1', userChoice:'r', computerChoice:'s'}
         render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)
         expect(screen.getByRole('img', { name: /user wins/i })).toBeDefined()
         expect(screen.getByRole('img', { name: /comp loses/i })).toBeDefined()
     })
+
     it('computer wins the game', () => {
         props = {...props, winner:'p2', roundResult:'2', userChoice:'r', computerChoice:'p'}
         render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)

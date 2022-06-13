@@ -3,11 +3,8 @@ import { render, screen, configure, waitFor } from '@testing-library/react';
 import RPSContainer from './RPSContainer';
 import { BrowserRouter } from "react-router-dom";
 import userEvent from '@testing-library/user-event'
-import { createMemoryHistory } from 'history';
 
-let history;
 const testRender = (component) => {
-    history = createMemoryHistory();
     return (render(<BrowserRouter >{component}</BrowserRouter>))
 }
 let container;
@@ -17,7 +14,6 @@ describe('----- RPSContainer tests -----', () => {
             throwSuggestions: true,
         })
         container = testRender(<RPSContainer />);
-
     })
 
     it('renders correctly - header exists', () => {

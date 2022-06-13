@@ -5010,6 +5010,11 @@
   "resolved" "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
   "version" "3.0.0"
 
+"cssfontparser@^1.2.1":
+  "integrity" "sha512-6tun4LoZnj7VN6YeegOVb67KBX/7JJsqvj+pv3ZA7F878/eN33AbGa5b/S/wXxS/tcp8nc40xRUrsPlxIyNUPg=="
+  "resolved" "https://registry.npmjs.org/cssfontparser/-/cssfontparser-1.2.1.tgz"
+  "version" "1.2.1"
+
 "cssnano-preset-default@^5.2.11":
   "integrity" "sha512-4PadR1NtuaIK8MvLNuY7MznK4WJteldGlzCiMaaTiOUP+apeiIvUDIXykzUOoqgOOUAHrU64ncdD90NfZR3LSQ=="
   "resolved" "https://registry.npmjs.org/cssnano-preset-default/-/cssnano-preset-default-5.2.11.tgz"
@@ -8124,6 +8129,14 @@
     "filelist" "^1.0.1"
     "minimatch" "^3.0.4"
 
+"jest-canvas-mock@^2.4.0":
+  "integrity" "sha512-mmMpZzpmLzn5vepIaHk5HoH3Ka4WykbSoLuG/EKoJd0x0ID/t+INo1l8ByfcUJuDM+RIsL4QDg/gDnBbrj2/IQ=="
+  "resolved" "https://registry.npmjs.org/jest-canvas-mock/-/jest-canvas-mock-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "cssfontparser" "^1.2.1"
+    "moo-color" "^1.0.2"
+
 "jest-changed-files@^27.5.1":
   "integrity" "sha512-buBLMiByfWGCoMsLLzGUUSpAmIAGnbR2KJoMN10ziLhOLvP4e0SlypHnAel8iqQXTrcbmfEY9sSqae5sgUsTvw=="
   "resolved" "https://registry.npmjs.org/jest-changed-files/-/jest-changed-files-27.5.1.tgz"
@@ -9776,6 +9789,13 @@
   "integrity" "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw=="
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
+
+"moo-color@^1.0.2":
+  "integrity" "sha512-i/+ZKXMDf6aqYtBhuOcej71YSlbjT3wCO/4H1j8rPvxDJEifdwgg5MaFyu6iYAT8GBZJg2z0dkgK4YMzvURALQ=="
+  "resolved" "https://registry.npmjs.org/moo-color/-/moo-color-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "color-name" "^1.1.4"
 
 "move-concurrently@^1.0.1":
   "integrity" "sha1-viwAX9oy4LKa8fBdfEszIUxwH5I= sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ=="

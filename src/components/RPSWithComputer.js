@@ -16,8 +16,6 @@ import compN from '../assets/Comp-normal.png'
 import compH from '../assets/Comp-happy.png'
 import Confetti from 'react-confetti'
 
-import PropTypes from 'prop-types'
-
 const RPSWithComputer = (props) => {
     const {
         setSelection,
@@ -40,7 +38,7 @@ const RPSWithComputer = (props) => {
                 <Row>
                     <Col>
                         <Row style={{ alignItems: 'center', ...styles.SectionContainer }}>
-                            <Col ><label style={styles.label}>Please select rounds to play </label></Col>
+                            <Col ><label role={'label'} style={styles.label}>Please select rounds to play </label></Col>
                             <Col >
                                 <Select options={options} value={rounds} onChange={(rounds) => setDropdownValue(rounds)} />
                             </Col>
@@ -51,12 +49,14 @@ const RPSWithComputer = (props) => {
                     </Col>
                 </Row>
             </Container>
-            {winner &&  <Confetti confettiSource={winner === 'p1' ? { x: 0, y: 0 } : {x: window.innerWidth, y:0}}></Confetti>}
-            {winner &&
+            {winner &&  
+            <div>
+                <Confetti confettiSource={winner === 'p1' ? { x: 0, y: 0 } : {x: window.innerWidth, y:0}}></Confetti>
                 <Row style={{...styles.SectionContainer, backgroundColor:'#DCFBBA'}}>
                     {winner === 'p1' && <h1>User Wins the game {userPoints + ' - ' + computerPoints}</h1>}
                     {winner === 'p2' && <h1>Computer Wins the game {computerPoints + ' - ' + userPoints} </h1>}
-                </Row>}
+                </Row>
+            </div>}
             <Row style={styles.Container}>
                 <Col style={styles.SectionContainer}>
                     {/* Player 1 Section */}

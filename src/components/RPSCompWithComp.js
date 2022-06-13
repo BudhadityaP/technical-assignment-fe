@@ -31,7 +31,7 @@ const RPSCompWithComp = (props) => {
                 <Row>
                     <Col>
                         <Row style={{ alignItems: 'center', ...styles.SectionContainer }}>
-                            <Col ><label style={styles.label}>Please select rounds to play </label></Col>
+                            <Col ><label role={'label'} style={styles.label}>Please select rounds to play </label></Col>
                             <Col >
                                 <Select options={options} value={rounds} onChange={(rounds) => setDropdownValue(rounds)} />
                             </Col>
@@ -58,7 +58,7 @@ const RPSCompWithComp = (props) => {
                         {
                             winner ? 
                         <Col> {winner === 'p1' ? <img src={compW} alt="Comp 1 Wins"></img> : <img src={compL} alt="Comp 1 Loses" />}</Col>
-                        : <Col> {roundResult === '1' ? <img src={compH} alt="Comp 1 Happy"></img> : <img src={compN} alt="Comp" />}</Col>
+                        : <Col> {roundResult === '1' ? <img src={compH} alt="Comp 1 Happy"></img> : <img src={compN} alt="Comp 1 normal" />}</Col>
                     }
                     </Row>
                     {userChoice && <Row style={{ alignItems: 'center'}} >
@@ -75,8 +75,8 @@ const RPSCompWithComp = (props) => {
                     <Row style={{ minHeight: 300 }}>
                         {
                             winner ? 
-                        <Col> {winner === 'p2' ? <img src={compW} alt="Comp Wins"></img> : <img src={compL} alt="Comp Loses" />}</Col>
-                        : <Col> {roundResult === '2' ? <img src={compH} alt="Comp Happy"></img> : <img src={compN} alt="Comp" />}</Col>
+                        <Col> {winner === 'p2' ? <img src={compW} alt="Comp 2 Wins"></img> : <img src={compL} alt="Comp 2 Loses" />}</Col>
+                        : <Col> {roundResult === '2' ? <img src={compH} alt="Comp 2 Happy"></img> : <img src={compN} alt="Comp 2 normal" />}</Col>
                     }
                     </Row>
                     {computerChoice && <Row style={{ alignItems: 'center'}} >
