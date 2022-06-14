@@ -1,15 +1,18 @@
 
 import React from 'react'
-import Button from './Button'
 import playRPS, { options, rpsPropTypes } from './PlayRPS'
-import Select from "react-select";
 import { Container, Row, Col } from 'react-bootstrap';
-import Confetti from 'react-confetti'
-import PropTypes from 'prop-types'
+
 import compL from '../assets/Comp-angry.png'
 import compW from '../assets/Comp-winner.png'
 import compN from '../assets/Comp-normal.png'
 import compH from '../assets/Comp-happy.png'
+
+import CommonHeader from './CommonHeader';
+import Winner from './Winner'
+import RoundResult from './RoundResult'
+import { styles } from '../js/styles';
+
 const RPSCompWithComp = (props) => {
     const {
         computerChoice,
@@ -24,32 +27,20 @@ const RPSCompWithComp = (props) => {
         rounds } = props
     return (
         <Container style={{ flex: 2 }}>
-            <Container>
-                <Row style={{ textAlign: 'center', paddingTop: 10, paddingBottom: 10 }}>
-                    <h1>Computer vs Computer</h1>
-                </Row>
-                <Row>
-                    <Col>
-                        <Row style={{ alignItems: 'center', ...styles.SectionContainer }}>
-                            <Col ><label role={'label'} style={styles.label}>Please select rounds to play </label></Col>
-                            <Col >
-                                <Select options={options} value={rounds} onChange={(rounds) => setDropdownValue(rounds)} />
-                            </Col>
-                        </Row>
-                    </Col>
-                    
-                    <Col>
-                        <Button commonProps={{...styles.common}} color={'#74C3F6'} isDisabled={winner!==null} text={'Play'} onClick={() => simulatePlay()}></Button>
-                        <Button text={'Restart'} color={'#B5C4CB'} commonProps={{ ...styles.common, fontSize: 20, float: 'right' }} onClick={restartGame}></Button>
-                    </Col>
-                </Row>
-            </Container>
-            {winner && <Confetti confettiSource={winner === 'p1' ? { x: 0, y: 0 } : { x: window.innerWidth, y: 0 }}></Confetti>}
-            {winner &&
-                <Row style={{...styles.SectionContainer, backgroundColor:'#DCFBBA'}}>
-                    {winner === 'p1' && <h1>Computer 1 Wins the game {userPoints + ' - ' + computerPoints}</h1>}
-                    {winner === 'p2' && <h1>Computer 2 Wins the game {computerPoints + ' - ' + userPoints} </h1>}
-                </Row>}
+            <CommonHeader 
+            title={'Computer vs Computer'}
+            setDropdownValue={setDropdownValue}
+            rounds={rounds} 
+            restartGame={restartGame}
+            simulatePlay={simulatePlay}
+            winner={winner}
+            />
+            
+            {winner && <Winner winner={winner}
+             userPoints={userPoints} 
+             computerPoints={computerPoints}
+             page={'cvc'} />}
+
            
             <Row style={styles.Container}>
                 <Col style={styles.SectionContainer}>
@@ -89,37 +80,10 @@ const RPSCompWithComp = (props) => {
                 </Col>
             </Row>
 
-            {roundResult && <Row style={styles.SectionContainer}>
-                <Col><h2>Round Result :</h2> </Col>
-                <Col><h2>{roundResult === '1' ? 'Computer 1 Wins' : roundResult === '2' ? 'Computer 2 wins' : roundResult}</h2></Col>
-            </Row>}
+            {roundResult && <RoundResult roundResult={roundResult}/>}
            
         </Container>
     )
-}
-
-const styles = {
-    Flex: {
-        border: '1px solid red',
-    },
-    margin10: {
-        margin: 10
-    },
-    Container: {
-        display: 'flex',
-    },
-    common: {
-        height: 50,
-        textAlign: 'center',
-        textDecoration: 'none',
-        fontSize: 20,
-        margin: 20,
-        width:200,
-        borderRadius:10,
-        border:'none'
-    },
-    SectionContainer: { textAlign: 'center', border: '1px solid #808080', borderRadius: 10, margin: 10, padding: 20 },
-    Points: { backgroundColor: 'red', borderRadius: 30, width: 55, padding: 10, float: 'right' }
 }
 
 RPSCompWithComp.propTypes = rpsPropTypes

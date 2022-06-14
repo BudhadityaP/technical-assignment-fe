@@ -22,19 +22,21 @@ Object {
           </div>
           <div
             class="row"
+            style="align-items: center;"
           >
             <div
               class="col"
             >
               <div
                 class="row"
-                style="align-items: center; text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+                style="align-items: center; text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
               >
                 <div
                   class="col"
                 >
                   <label
                     role="label"
+                    style="font-size: 20px;"
                   >
                     Please select rounds to play 
                   </label>
@@ -141,11 +143,10 @@ Object {
         </div>
         <div
           class="row"
-          style="display: flex;"
         >
           <div
             class="col"
-            style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+            style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
           >
             <div
               class="row"
@@ -164,7 +165,7 @@ Object {
           </div>
           <div
             class="col"
-            style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+            style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
           >
             <div
               class="row"
@@ -203,19 +204,21 @@ Object {
         </div>
         <div
           class="row"
+          style="align-items: center;"
         >
           <div
             class="col"
           >
             <div
               class="row"
-              style="align-items: center; text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+              style="align-items: center; text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
             >
               <div
                 class="col"
               >
                 <label
                   role="label"
+                  style="font-size: 20px;"
                 >
                   Please select rounds to play 
                 </label>
@@ -322,11 +325,10 @@ Object {
       </div>
       <div
         class="row"
-        style="display: flex;"
       >
         <div
           class="col"
-          style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+          style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
         >
           <div
             class="row"
@@ -345,7 +347,7 @@ Object {
         </div>
         <div
           class="col"
-          style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 20px;"
+          style="text-align: center; border: 1px solid #808080; border-radius: 10px; margin: 10px; padding: 10px;"
         >
           <div
             class="row"

@@ -21,6 +21,7 @@ Object {
           </div>
           <div
             class="row"
+            style="align-items: center;"
           >
             <div
               class="col"
@@ -241,6 +242,7 @@ Object {
         </div>
         <div
           class="row"
+          style="align-items: center;"
         >
           <div
             class="col"

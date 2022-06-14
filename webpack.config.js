@@ -7,7 +7,8 @@ module.exports = {
 	cache: true,
 	devtool: "source-map",
 	devServer: {
-		inline: true
+		inline: true,
+		historyApiFallback: true
 	},
 	resolve: {
 		extensions: [".js"]
