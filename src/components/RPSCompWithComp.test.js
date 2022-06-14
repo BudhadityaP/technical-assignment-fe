@@ -16,21 +16,21 @@ let props = {
     setDropdownValue:jest.fn(),
     rounds:null,
 }
-const testRender = (component) => {
-    return (render(<BrowserRouter >{component}</BrowserRouter>))
-}
+
 let container;
 describe('----- RPSCompWithComp tests -----', () => {
     beforeEach(() => {
         configure({
             throwSuggestions: true,
         })
-       // testRender(<RPSCompWithComp {...props} />);
+    })
+
+    it('snapshot test', () => {
+        expect(render(<BrowserRouter ><RPSCompWithComp {...props} /></BrowserRouter>)).toMatchSnapshot()
     })
 
     it('renders correctly - header exists', () => {
         render(<BrowserRouter ><RPSCompWithComp {...props} /></BrowserRouter>)
-        expect(container).toMatchSnapshot()
         const h1 = screen.getByRole('heading', { name: /Computer vs Computer/i })
         const label = screen.getByRole('label', { name: /Please select rounds to play/i })
         expect(h1).toBeDefined();

@@ -9,27 +9,25 @@ let props = {
     roundResult:'',
     userChoice:'',
     restartGame: jest.fn(),
-    test:jest.fn(),
     userPoints:0,
     computerPoints:0,
     setDropdownValue:jest.fn(),
     rounds:null,
 }
-const testRender = (component) => {
-    return (render(<BrowserRouter >{component}</BrowserRouter>))
-}
-let container;
+
 describe('----- RPSWithComputer tests -----', () => {
     beforeEach(() => {
         configure({
             throwSuggestions: true,
         })
-       // testRender(<RPSWithComputer {...props} />);
+    })
+
+    it('snapshot test', () => {
+        expect(render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)).toMatchSnapshot()
     })
 
     it('renders correctly - header exists', () => {
         render(<BrowserRouter ><RPSWithComputer {...props} /></BrowserRouter>)
-        expect(container).toMatchSnapshot()
         const h1 = screen.getByRole('heading', { name: /Play with Computer/i })
         const label = screen.getByRole('label', { name: /Please select rounds to play/i })
         expect(h1).toBeDefined();
