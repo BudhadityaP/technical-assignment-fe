@@ -13,9 +13,13 @@ import RPSContainer from '../components/RPSContainer'
 import RPSWithComputer from '../components/RPSWithComputer'
 import RPSCompWithComp from '../components/RPSCompWithComp'
 
+import store from '../redux/store'
+import { Provider } from 'react-redux'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
+  <Provider store={store}>
     <BrowserRouter>
      <Routes>
         <Route path="/" element={<RPSContainer />} />
@@ -23,4 +27,5 @@ root.render(
         <Route path="RPSCompWithComp" element={<RPSCompWithComp />} />
       </Routes>
     </BrowserRouter>
+    </Provider>
   );

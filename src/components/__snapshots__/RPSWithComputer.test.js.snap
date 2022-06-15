@@ -161,6 +161,7 @@ Object {
                   <button
                     aria-label="Rock"
                     class="btn"
+                    disabled=""
                     style="background-color: rgb(51, 255, 189); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
                   >
@@ -175,6 +176,7 @@ Object {
                   <button
                     aria-label="Paper"
                     class="btn"
+                    disabled=""
                     style="background-color: rgb(255, 189, 51); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
                   >
@@ -189,6 +191,7 @@ Object {
                   <button
                     aria-label="Scissor"
                     class="btn"
+                    disabled=""
                     style="background-color: rgb(51, 167, 255); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
                   >
@@ -391,6 +394,7 @@ Object {
                 <button
                   aria-label="Rock"
                   class="btn"
+                  disabled=""
                   style="background-color: rgb(51, 255, 189); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"
                 >
@@ -405,6 +409,7 @@ Object {
                 <button
                   aria-label="Paper"
                   class="btn"
+                  disabled=""
                   style="background-color: rgb(255, 189, 51); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"
                 >
@@ -419,6 +424,7 @@ Object {
                 <button
                   aria-label="Scissor"
                   class="btn"
+                  disabled=""
                   style="background-color: rgb(51, 167, 255); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"
                 >

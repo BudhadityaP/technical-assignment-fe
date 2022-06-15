@@ -1,6 +1,5 @@
 
 import React from 'react'
-import playRPS, { options, rpsPropTypes } from './PlayRPS'
 import { Container, Row, Col } from 'react-bootstrap';
 
 import compL from '../assets/Comp-angry.png'
@@ -12,30 +11,35 @@ import CommonHeader from './CommonHeader';
 import Winner from './Winner'
 import RoundResult from './RoundResult'
 import { styles } from '../js/styles';
+import { useSelector, useDispatch } from 'react-redux'
+import { rpsActions } from '../redux/action';
+import { randomSelection, checkWinner } from '../js/util';
 
 const page='cvc'
-const RPSCompWithComp = (props) => {
+const RPSCompWithComp = () => {
+    const rpsState = useSelector((state) => state.rpsReducer)
+    const dispatch = useDispatch()
+    let playData = {}
     const {
         computerChoice,
         roundResult,
         userChoice,
-        restartGame,
         userPoints,
         computerPoints,
-        simulatePlay,
-        setDropdownValue,
         winner,
-        rounds } = props
+        rounds
+    } = rpsState
+    const simulatePlay = async () => {
+        playData = await checkWinner(randomSelection(), userPoints, computerPoints, rounds)
+        dispatch(rpsActions.setPlayData(playData))
+    }
     return (
         <Container style={{ flex: 2 }}>
-            <CommonHeader 
-            title={'Computer vs Computer'}
-            setDropdownValue={setDropdownValue}
-            rounds={rounds} 
-            restartGame={restartGame}
-            simulatePlay={simulatePlay}
-            winner={winner}
-            />
+            <CommonHeader
+                title={'Computer vs Computer'}
+                rounds={rounds}
+                simulatePlay={simulatePlay}
+                winner={winner} />
             
             {winner && <Winner winner={winner}
              userPoints={userPoints} 
@@ -87,5 +91,4 @@ const RPSCompWithComp = (props) => {
     )
 }
 
-RPSCompWithComp.propTypes = rpsPropTypes
-export default playRPS(RPSCompWithComp);
+export default RPSCompWithComp;

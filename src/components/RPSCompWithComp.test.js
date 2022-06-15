@@ -18,7 +18,7 @@ let props = {
 }
 
 let container;
-describe('----- RPSCompWithComp tests -----', () => {
+xdescribe('----- RPSCompWithComp tests -----', () => {
     beforeEach(() => {
         configure({
             throwSuggestions: true,

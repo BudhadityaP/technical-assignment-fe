@@ -10,7 +10,7 @@ let props = {
     simulatePlay: jest.fn(),
     winner: null
 }
-describe('CommonHeader component tests', () => {
+xdescribe('CommonHeader component tests', () => {
 
     it('CommonHeader Title render', () => {
         props = { ...props,title:'Test Title' }

@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import Select from "react-select";
-import { options } from './PlayRPS';
 import { styles } from '../js/styles';
+import { options } from '../js/util';
 import Button from './Button'
+import { rpsActions } from '../redux/action';
+import { useDispatch } from 'react-redux';
 
-const commonHeader = ({ title, setDropdownValue, rounds, restartGame, simulatePlay, winner }) => {
+const commonHeader = ({ title, rounds, simulatePlay, winner }) => {
+
+    const dispatch = useDispatch()
+
+    const setDropdownValue = (r) => {
+        dispatch(rpsActions.restartGame())
+        dispatch(rpsActions.setDropdownValue(r))
+    }
+
+    const restartGame = () => {
+        dispatch(rpsActions.restartGame())
+    }
+
+    useEffect(() => {
+        dispatch(rpsActions.restartGame())
+    }, [])
+
     return (
         <Container aria-label='common header container'>
             <Row style={styles.title}>

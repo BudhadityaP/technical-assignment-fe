@@ -1,0 +1,4 @@
+
+export const SET_DROPDOWN_VALUE = 'SET_DROPDOWN_VALUE'
+export const RESTART_GAME = 'RESTART_GAME'
+export const SET_PLAY_DATA = 'SET_PLAY_DATA'

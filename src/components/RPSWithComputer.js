@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Button from './Button'
-import playRPS, { options, playElements, rpsPropTypes } from './PlayRPS'
+import { playElements, options } from '../js/util'
 import { Container, Row, Col } from 'react-bootstrap';
 
 import userH from '../assets/smiley-happy.png'
@@ -18,33 +18,41 @@ import CommonHeader from './CommonHeader';
 import Winner from './Winner'
 import RoundResult from './RoundResult'
 import { styles } from '../js/styles';
+import { useSelector, useDispatch } from 'react-redux'
+import { rpsActions } from '../redux/action';
 
-const page='pwc'
-const RPSWithComputer = (props) => {
+import { checkWinner } from '../js/util';
+const page = 'pwc'
+const RPSWithComputer = () => {
+    const rpsState = useSelector((state) => state.rpsReducer)
+    const dispatch = useDispatch()
+    let playData = {}
     const {
-        setSelection,
         computerChoice,
         roundResult,
         userChoice,
-        restartGame,
         userPoints,
         computerPoints,
-        setDropdownValue,
         winner,
-        rounds } = props
+        rounds
+    } = rpsState
+console.log('----------------- >>>>>>> ', rpsState);
+    const setSelection = async (sel) => {
+        playData = await checkWinner(sel, userPoints, computerPoints, rounds)
+        dispatch(rpsActions.setPlayData(playData))
+    }
 
     return (
         <Container >
-            <CommonHeader 
-            title={'Play with Computer'}
-            setDropdownValue={setDropdownValue}
-            rounds={rounds} 
-            restartGame={restartGame} />
-            
+            <CommonHeader
+                title={'Play with Computer'}
+                rounds={rounds} />
+
             {winner && <Winner winner={winner}
-             userPoints={userPoints} 
-             computerPoints={computerPoints}
-             page={page} />}
+                userPoints={userPoints}
+                computerPoints={computerPoints}
+                page={page}
+                />}
 
             <Row style={styles.Container}>
                 <Col style={styles.SectionContainer}>
@@ -98,13 +106,10 @@ const RPSWithComputer = (props) => {
                 </Col>
             </Row>
 
-            {roundResult && <RoundResult roundResult={roundResult} page={page}/>}
+            {roundResult && <RoundResult roundResult={roundResult} page={page} />}
 
         </Container>
     )
 }
 
-
-
-RPSWithComputer.propTypes = rpsPropTypes
-export default playRPS(RPSWithComputer);
+export default RPSWithComputer;
