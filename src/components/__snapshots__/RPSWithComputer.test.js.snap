@@ -9,13 +9,16 @@ Object {
         class="container"
       >
         <div
+          aria-label="common header container"
           class="container"
         >
           <div
             class="row"
             style="text-align: center; padding-top: 10px; padding-bottom: 10px;"
           >
-            <h1>
+            <h1
+              area-label="Play with Computer"
+            >
               Play with Computer
             </h1>
           </div>
@@ -34,10 +37,11 @@ Object {
                   class="col"
                 >
                   <label
+                    area-label="Please select target score"
                     role="label"
                     style="font-size: 20px;"
                   >
-                    Please select rounds to play 
+                    Please select target score
                   </label>
                 </div>
                 <div
@@ -77,6 +81,7 @@ Object {
                             aria-describedby="react-select-2-placeholder"
                             aria-expanded="false"
                             aria-haspopup="true"
+                            aria-label="select-rounds"
                             autocapitalize="none"
                             autocomplete="off"
                             autocorrect="off"
@@ -124,6 +129,7 @@ Object {
               class="col"
             >
               <button
+                aria-label="Restart"
                 class="btn"
                 style="background-color: rgb(181, 196, 203); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px; float: right;"
                 type="button"
@@ -153,6 +159,7 @@ Object {
                 >
                    
                   <button
+                    aria-label="Rock"
                     class="btn"
                     style="background-color: rgb(51, 255, 189); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
@@ -166,6 +173,7 @@ Object {
                 >
                    
                   <button
+                    aria-label="Paper"
                     class="btn"
                     style="background-color: rgb(255, 189, 51); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
@@ -179,6 +187,7 @@ Object {
                 >
                    
                   <button
+                    aria-label="Scissor"
                     class="btn"
                     style="background-color: rgb(51, 167, 255); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                     type="button"
@@ -230,13 +239,16 @@ Object {
       class="container"
     >
       <div
+        aria-label="common header container"
         class="container"
       >
         <div
           class="row"
           style="text-align: center; padding-top: 10px; padding-bottom: 10px;"
         >
-          <h1>
+          <h1
+            area-label="Play with Computer"
+          >
             Play with Computer
           </h1>
         </div>
@@ -255,10 +267,11 @@ Object {
                 class="col"
               >
                 <label
+                  area-label="Please select target score"
                   role="label"
                   style="font-size: 20px;"
                 >
-                  Please select rounds to play 
+                  Please select target score
                 </label>
               </div>
               <div
@@ -298,6 +311,7 @@ Object {
                           aria-describedby="react-select-2-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
+                          aria-label="select-rounds"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -345,6 +359,7 @@ Object {
             class="col"
           >
             <button
+              aria-label="Restart"
               class="btn"
               style="background-color: rgb(181, 196, 203); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px; float: right;"
               type="button"
@@ -374,6 +389,7 @@ Object {
               >
                  
                 <button
+                  aria-label="Rock"
                   class="btn"
                   style="background-color: rgb(51, 255, 189); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"
@@ -387,6 +403,7 @@ Object {
               >
                  
                 <button
+                  aria-label="Paper"
                   class="btn"
                   style="background-color: rgb(255, 189, 51); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"
@@ -400,6 +417,7 @@ Object {
               >
                  
                 <button
+                  aria-label="Scissor"
                   class="btn"
                   style="background-color: rgb(51, 167, 255); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                   type="button"

@@ -27,16 +27,4 @@ describe('CommonHeader component tests', () => {
         expect(playButton).toBeDefined()
         expect(restartButton).toBeDefined()
     })
-    
-    
-    // it('should display the correct number of options', () => {
-    //     const dropDown = screen.getAllByRole('combobox')
-    //     expect(dropDown.length).toBe(1)
-    //     // fireEvent.click(dropDown)
-    //     console.log('rrrrrrrr ', dropDown);
-    //     // fireEvent.change(dropDown, { target: { value: 1 } })
-    //     // expect(props.setDropdownValue).toHaveBeenCalled()
-
-    //     //expect(screen.getByRole('option', { name: 'Rock' }).selected).toBe(true)
-    // })
 })

@@ -12,7 +12,9 @@ Object {
           class="row"
           style="text-align: center; padding-top: 50px; padding-bottom: 50px;"
         >
-          <h1>
+          <h1
+            aria-label="Welcome to the game - Rock Paper Scissors!"
+          >
             Welcome to the game - Rock Paper Scissors!
           </h1>
         </div>
@@ -28,11 +30,12 @@ Object {
               style="text-decoration: none;"
             >
               <button
+                aria-label="Play with Computer"
                 class="btn"
                 style="background-color: rgb(249, 190, 90); width: 300px; height: 100px; text-align: center; text-decoration: none; font-size: 30px; padding: 10px; border-radius: 10px; margin: 10px;"
                 type="button"
               >
-                Human vs Computer
+                Play with Computer
               </button>
             </a>
           </div>
@@ -44,6 +47,7 @@ Object {
               style="text-decoration: none;"
             >
               <button
+                aria-label="Comp vs Comp"
                 class="btn"
                 style="background-color: rgb(65, 192, 180); width: 300px; height: 100px; text-align: center; text-decoration: none; font-size: 30px; padding: 10px; border-radius: 10px; margin: 10px;"
                 type="button"
@@ -62,6 +66,7 @@ Object {
           >
             <img
               alt="rps"
+              area-label="[object Object]"
               src="[object Object]"
             />
           </div>
@@ -77,7 +82,9 @@ Object {
         class="row"
         style="text-align: center; padding-top: 50px; padding-bottom: 50px;"
       >
-        <h1>
+        <h1
+          aria-label="Welcome to the game - Rock Paper Scissors!"
+        >
           Welcome to the game - Rock Paper Scissors!
         </h1>
       </div>
@@ -93,11 +100,12 @@ Object {
             style="text-decoration: none;"
           >
             <button
+              aria-label="Play with Computer"
               class="btn"
               style="background-color: rgb(249, 190, 90); width: 300px; height: 100px; text-align: center; text-decoration: none; font-size: 30px; padding: 10px; border-radius: 10px; margin: 10px;"
               type="button"
             >
-              Human vs Computer
+              Play with Computer
             </button>
           </a>
         </div>
@@ -109,6 +117,7 @@ Object {
             style="text-decoration: none;"
           >
             <button
+              aria-label="Comp vs Comp"
               class="btn"
               style="background-color: rgb(65, 192, 180); width: 300px; height: 100px; text-align: center; text-decoration: none; font-size: 30px; padding: 10px; border-radius: 10px; margin: 10px;"
               type="button"
@@ -127,6 +136,7 @@ Object {
         >
           <img
             alt="rps"
+            area-label="[object Object]"
             src="[object Object]"
           />
         </div>

@@ -24,15 +24,15 @@ describe('----- RPSContainer tests -----', () => {
     })
 
     it('renders correctly - buttons exist', () => {
-        const button1 = screen.getByRole('button', { name: /human vs computer/i })
+        const button1 = screen.getByRole('button', { name: /play with computer/i })
         const button2 = screen.getByRole('button', { name: /comp vs comp/i })
         expect(button1).toBeDefined();
         expect(button2).toBeDefined();
     })
 
-    it('renders correctly - Users clicks Human vs Computer button', async () => {
+    it('renders correctly - Users clicks play with Computer button', async () => {
         const user = userEvent.setup()
-        const button1 = screen.getByRole('button', { name: /human vs computer/i })
+        const button1 = screen.getByRole('button', { name: /play with computer/i })
         user.click(button1)
         await waitFor(() => {
             expect(window.location.pathname).toEqual('/RPSWithComputer');

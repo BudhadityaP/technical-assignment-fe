@@ -58,7 +58,7 @@ describe('----- playRPS tests -----',  () => {
         expect(setWinnerSpy).toHaveBeenCalled();
     })
 
-    it('draw game', () => {
+    it('draw round', () => {
         const mockObj = new MockWithHOC()
         const checkWinnerSpy = jest.spyOn(mockObj, 'checkWinner')
         mockObj.checkWinner('r', 'r')

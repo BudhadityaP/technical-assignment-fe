@@ -19,6 +19,7 @@ import Winner from './Winner'
 import RoundResult from './RoundResult'
 import { styles } from '../js/styles';
 
+const page='pwc'
 const RPSWithComputer = (props) => {
     const {
         setSelection,
@@ -43,7 +44,7 @@ const RPSWithComputer = (props) => {
             {winner && <Winner winner={winner}
              userPoints={userPoints} 
              computerPoints={computerPoints}
-             page={'pwc'} />}
+             page={page} />}
 
             <Row style={styles.Container}>
                 <Col style={styles.SectionContainer}>
@@ -72,7 +73,7 @@ const RPSWithComputer = (props) => {
                     {userChoice && <Row style={{ alignItems: 'center' }} >
                         <Col><h3>Choice : {userChoice}</h3></Col>
                         <Col >
-                            <h3 style={{ ...styles.Points, backgroundColor: '#95BFF4' }}>{userPoints}
+                            <h3 style={{ ...styles.Points, backgroundColor: '#C642F8' }}>{userPoints}
                             </h3>
                         </Col>
                     </Row>}
@@ -90,14 +91,14 @@ const RPSWithComputer = (props) => {
                     {computerChoice && <Row style={{ alignItems: 'center' }} >
                         <Col><h3>Choice : {computerChoice}</h3></Col>
                         <Col >
-                            <h3 style={{ ...styles.Points, backgroundColor: '#95F49F' }}>{computerPoints}
+                            <h3 style={{ ...styles.Points, backgroundColor: '#FFFF04' }}>{computerPoints}
                             </h3>
                         </Col>
                     </Row>}
                 </Col>
             </Row>
 
-            {roundResult && <RoundResult roundResult={roundResult}/>}
+            {roundResult && <RoundResult roundResult={roundResult} page={page}/>}
 
         </Container>
     )

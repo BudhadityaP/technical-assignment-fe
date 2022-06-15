@@ -32,7 +32,7 @@ describe('----- RPSCompWithComp tests -----', () => {
     it('renders correctly - header exists', () => {
         render(<BrowserRouter ><RPSCompWithComp {...props} /></BrowserRouter>)
         const h1 = screen.getByRole('heading', { name: /Computer vs Computer/i })
-        const label = screen.getByRole('label', { name: /Please select rounds to play/i })
+        const label = screen.getByRole('label', { name: /Please select target score/i })
         expect(h1).toBeDefined();
         expect(label).toBeDefined();
     })
@@ -74,7 +74,7 @@ describe('----- RPSCompWithComp tests -----', () => {
         expect(screen.getByRole('img', { name: /comp 1 normal/i })).toBeDefined()
     })
 
-    it('draw game', () => {
+    it('draw round', () => {
         props = {...props, userChoice:'r', computerChoice:'r', roundResult:'Draw'}
         render(<BrowserRouter ><RPSCompWithComp {...props} /></BrowserRouter>)
         expect(screen.getByRole('img', { name: /comp 1 normal/i })).toBeDefined()

@@ -10,13 +10,16 @@ Object {
         style="flex: 2;"
       >
         <div
+          aria-label="common header container"
           class="container"
         >
           <div
             class="row"
             style="text-align: center; padding-top: 10px; padding-bottom: 10px;"
           >
-            <h1>
+            <h1
+              area-label="Computer vs Computer"
+            >
               Computer vs Computer
             </h1>
           </div>
@@ -35,10 +38,11 @@ Object {
                   class="col"
                 >
                   <label
+                    area-label="Please select target score"
                     role="label"
                     style="font-size: 20px;"
                   >
-                    Please select rounds to play 
+                    Please select target score
                   </label>
                 </div>
                 <div
@@ -78,6 +82,7 @@ Object {
                             aria-describedby="react-select-2-placeholder"
                             aria-expanded="false"
                             aria-haspopup="true"
+                            aria-label="select-rounds"
                             autocapitalize="none"
                             autocomplete="off"
                             autocorrect="off"
@@ -125,13 +130,15 @@ Object {
               class="col"
             >
               <button
+                aria-label="Play"
                 class="btn"
-                style="background-color: rgb(116, 195, 246); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
+                style="background-color: rgb(64, 241, 80); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
                 type="button"
               >
                 Play
               </button>
               <button
+                aria-label="Restart"
                 class="btn"
                 style="background-color: rgb(181, 196, 203); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px; float: right;"
                 type="button"
@@ -192,13 +199,16 @@ Object {
       style="flex: 2;"
     >
       <div
+        aria-label="common header container"
         class="container"
       >
         <div
           class="row"
           style="text-align: center; padding-top: 10px; padding-bottom: 10px;"
         >
-          <h1>
+          <h1
+            area-label="Computer vs Computer"
+          >
             Computer vs Computer
           </h1>
         </div>
@@ -217,10 +227,11 @@ Object {
                 class="col"
               >
                 <label
+                  area-label="Please select target score"
                   role="label"
                   style="font-size: 20px;"
                 >
-                  Please select rounds to play 
+                  Please select target score
                 </label>
               </div>
               <div
@@ -260,6 +271,7 @@ Object {
                           aria-describedby="react-select-2-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
+                          aria-label="select-rounds"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -307,13 +319,15 @@ Object {
             class="col"
           >
             <button
+              aria-label="Play"
               class="btn"
-              style="background-color: rgb(116, 195, 246); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
+              style="background-color: rgb(64, 241, 80); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px;"
               type="button"
             >
               Play
             </button>
             <button
+              aria-label="Restart"
               class="btn"
               style="background-color: rgb(181, 196, 203); height: 50px; text-align: center; text-decoration: none; font-size: 20px; margin: 20px; width: 200px; border-radius: 10px; float: right;"
               type="button"
