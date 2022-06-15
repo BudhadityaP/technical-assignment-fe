@@ -36,7 +36,7 @@ const RPSWithComputer = () => {
         winner,
         rounds
     } = rpsState
-console.log('----------------- >>>>>>> ', rpsState);
+
     const setSelection = async (sel) => {
         playData = await checkWinner(sel, userPoints, computerPoints, rounds)
         dispatch(rpsActions.setPlayData(playData))
